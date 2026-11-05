@@ -3,6 +3,7 @@
 A peer-to-peer marketplace where creators rent photo studios, film stages, podcast lounges, music suites and art workshops by the hour.
 
 **Live site:** https://studiospace-client-sigma-beige.vercel.app
+API_URL=https://studiospace-server-ist0bbpjo-im-student.vercel.app
 
 
 ## Features
