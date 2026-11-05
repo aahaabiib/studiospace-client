@@ -1,15 +1,12 @@
-/** @type {import('next').NextConfig} */
+const API_URL = process.env.API_URL || "http://127.0.0.1:5000";
+
 const nextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
+  images: { remotePatterns: [{ protocol: "https", hostname: "**" }] },
+  async rewrites() {
+    return ["studios", "bookings", "wishlist"].map((name) => ({
+      source: `/api/${name}/:path*`,
+      destination: `${API_URL}/api/${name}/:path*`,
+    }));
   },
 };
 
